@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corrida de Fourg</title>
+    <style>
+        /* --- VARIABLES ET RESET --- */
+        :root {
+            --teal-dark: #1A5F7A; 
+            --green-main: #69B34C; 
+            --bg-body: #F4F7F6;
+            --text-on-dark: #FFFFFF;
+            --text-body: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-body);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .site-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-grow: 1;
+        }
+
+        /* --- HEADER & NAVIGATION ALIGNÉE --- */
+        header {
+            padding: 1.5rem 0;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between; /* Aligne le titre à gauche et le menu à droite */
+            align-items: center;
+            position: relative;
+        }
+
+        /* Style du Nom de l'Association (à gauche) */
+        .brand-name {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--teal-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .menu-checkbox {
+            display: none;
+        }
+
+        /* Liste des liens (à droite sur ordinateur) */
+        .menu-list {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .menu-list a {
+            font-weight: 600;
+            padding: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .menu-list a:hover {
+            color: var(--green-main);
+        }
+
+        /* Bouton Hamburger (caché sur ordi) */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 30px;
+            height: 4px;
+            background-color: var(--teal-dark);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* --- CONTENU PRINCIPAL --- */
+        .hero-banner {
+            background-color: var(--teal-dark);
+            color: var(--text-on-dark);
+            text-align: center;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            margin: 1rem 0 3rem 0;
+        }
+
+        .hero-banner a {
+            font-size: 1.8rem;
+            font-weight: 600;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 5px;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .link-card {
+            background-color: var(--green-main);
+            color: var(--text-on-dark);
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--teal-dark);
+            color: var(--text-on-dark);
+            text-align: center;
+            padding: 2.5rem 0;
+            margin-top: auto;
+        }
+
+        /* --- RESPONSIVE : MOBILE --- */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex; /* Affiche les 3 barres à droite */
+            }
+
+            .menu-list {
+                display: none; /* Cache le menu */
+                flex-direction: column;
+                position: absolute;
+                top: 50px;
+                right: 0;
+                width: 220px;
+                background-color: white;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+                padding: 1.5rem 0;
+                text-align: center;
+                z-index: 90;
+                border-radius: 8px;
+            }
+
+            .menu-checkbox:checked ~ .menu-list {
+                display: flex;
+            }
+
+            /* Animation X */
+            .menu-checkbox:checked ~ .hamburger span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+            .menu-checkbox:checked ~ .hamburger span:nth-child(2) { opacity: 0; }
+            .menu-checkbox:checked ~ .hamburger span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+        }
+		
+		.map-section {
+			margin: 3rem 0;
+			text-align: center;
+		}
+
+		.map-section h2 {
+			color: var(--teal-dark);
+			margin-bottom: 1.5rem;
+		}
+
+		.map-container {
+			width: 100%;
+			max-width: 900px; /* On limite la largeur pour que ce soit élégant */
+			margin: 0 auto;
+			background: white;
+			padding: 10px;
+			border-radius: 12px;
+			box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+		}
+
+		.map-container iframe {
+			display: block;
+			border-radius: 8px;
+		}
+		
+    </style>
+</head>
+<body>
+
+    <div class="site-container">
+        <header>
+            <nav class="main-nav">
+                <a href="index.html" >
+					<div class="brand-name">Les gens de Fourg</div>
+				</a>
+                <div class="nav-right">
+                    <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+                    
+                    <label for="menu-toggle" class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+
+                    <ul class="menu-list">
+                        <li><a href="index.html">Accueil</a></li>
+						<li><a href="corrida.html">Corrida</a></li>
+						<li><a href="#">Marche gourmande</a></li>
+						<li><a href="#">Marché de Noel</a></li>
+						<li><a href="#">L'association</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero-banner">
+                <a href="#">Presentation du site</a>
+            </section>
+
+            <section class="links-grid">
+                <div class="link-card">Lien 1</div>
+                <div class="link-card">Lien 2</div>
+                <div class="link-card">Lien 3</div>
+                <div class="link-card">Lien 4</div>
+            </section>
+        </main>
+    </div> <footer>
+        <p>Pied de page</p>
+    </footer>
+
+</body>
+</html>
