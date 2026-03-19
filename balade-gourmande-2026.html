@@ -201,30 +201,10 @@
             .menu-checkbox:checked ~ .hamburger span:nth-child(2) { opacity: 0; }
             .menu-checkbox:checked ~ .hamburger span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
         }
-		
-		.map-section {
-			margin: 3rem 0;
-			text-align: center;
-		}
 
-		.map-section h2 {
+		.google-maps-preview h2 {
 			color: var(--teal-dark);
 			margin-bottom: 1.5rem;
-		}
-
-		.map-container {
-			width: 100%;
-			max-width: 900px; /* On limite la largeur pour que ce soit élégant */
-			margin: 0 auto;
-			background: white;
-			padding: 10px;
-			border-radius: 12px;
-			box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-		}
-
-		.map-container iframe {
-			display: block;
-			border-radius: 8px;
 		}
 		
 		.links-grid {
@@ -535,6 +515,155 @@
 			text-align: center;
 			display: inline-block; /* Pour que la barre ne fasse pas toute la largeur */
 		}
+		
+		.balade-gourmande-card {
+			max-width: 700px;
+			margin: 40px auto;
+			background: #ffffff;
+			border-radius: 25px;
+			overflow: hidden;
+			box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+			font-family: 'Segoe UI', Roboto, sans-serif;
+			border: 1px solid #e0e0e0;
+		}
+
+		.balade-header {
+			background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+			color: white;
+			padding: 30px 20px 40px 20px;
+			text-align: center;
+		}
+
+		.header-top {
+			display: flex;
+			justify-content: center;
+			gap: 15px;
+			margin-bottom: 20px;
+			flex-wrap: wrap;
+		}
+
+		.badge-date, .badge-heure {
+			background: rgba(255,255,255,0.25);
+			padding: 8px 18px;
+			border-radius: 25px;
+			font-size: 1rem;
+			font-weight: 600;
+			letter-spacing: 0.5px;
+			backdrop-filter: blur(5px);
+		}
+
+		.balade-header h2 {
+			margin: 10px 0 5px 0;
+			font-size: 2.8rem;
+			/* Rappel de ton style : contour léger pour la lisibilité */
+			text-shadow: 1px 2px 0px rgba(0,0,0,0.2);
+		}
+
+		.subtitle {
+			font-style: italic;
+			opacity: 0.95;
+			font-size: 1.1rem;
+		}
+
+		.balade-content {
+			padding: 35px;
+			color: #444;
+			line-height: 1.7;
+		}
+
+		.menu2-list {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			list-style: none;
+			padding: 0;
+			margin: 30px 0;
+			gap: 12px;
+		}
+
+		.menu2-list li {
+			background: #f1f8f4;
+			padding: 10px 18px;
+			border-radius: 15px;
+			border: 1px solid #d4ede0;
+			font-weight: 600;
+			color: #27ae60;
+			font-size: 1rem;
+		}
+
+		.menu2-list span {
+			margin-right: 5px;
+		}
+
+		.info-importante {
+			background: #fff9db;
+			border: 1px solid #ffe066;
+			color: #856404;
+			padding: 15px;
+			border-radius: 10px;
+			text-align: center;
+			margin-bottom: 30px;
+			font-size: 0.95rem;
+		}
+
+		.tarifs-box {
+			background: #fdf2f2;
+			border-radius: 15px;
+			padding: 25px;
+			border: 1px solid #fab1a0;
+		}
+
+		.tarifs-details {
+			display: flex;
+			justify-content: space-around;
+			margin-bottom: 20px;
+			gap: 20px;
+		}
+
+		.tarif-item {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.tarif-label {
+			font-size: 1rem;
+			color: #7f8c8d;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			margin-bottom: 5px;
+		}
+
+		.tarif-price {
+			font-size: 3rem;
+			font-weight: 900;
+			color: #e74c3c;
+			line-height: 1;
+		}
+
+		.solidarite-mention {
+			text-align: center;
+			background: #ffffff;
+			color: #c0392b;
+			padding: 12px;
+			border-radius: 10px;
+			font-size: 1.1rem;
+			border: 1px solid #fab1a0;
+		}
+
+		.solidarite-mention strong {
+			font-weight: 800;
+		}
+
+		@media (max-width: 600px) {
+			.tarifs-details { flex-direction: column; align-items: center; }
+			.tarif-item { margin-bottom: 15px; width: 100%; }
+			.tarif-price { font-size: 2.5rem; }
+			.balade-header h2 { font-size: 2rem; }
+			.header-top { flex-direction: column; gap: 10px; }
+		}
+		
     </style>
 </head>
 <body>
@@ -600,9 +729,49 @@
 				</div>
 			</section>
 			
-            <div class="photo-responsive-container">
-				<img src="affiches/balade-gourmande-2026.png" alt="Départ de la course à Fourg" class="img-adaptative">
-			</div>
+			<section class="balade-gourmande-card">
+				<div class="balade-header">
+					<div class="header-top">
+						<span class="badge-date">📅 1er Mai 2026</span>
+						<span class="badge-heure">🕒 Départ : 10h00</span>
+					</div>
+					<h2>Balade Gourmande</h2>
+					<p class="subtitle">12km entre saveurs et forêt de Chaux</p>
+				</div>
+
+				<div class="balade-content">
+					<p>Venez découvrir notre village et notre magnifique forêt de Chaux lors d'une marche de 12kms. Votre balade sera entrecoupée de moments conviviaux et chalereux grâce à nos bénévoles.</p>
+					<br>
+					<ul class="menu2-list">
+						<li><span>🍷</span> Apéritif</li>
+						<li><span>🥗</span> Entrée</li>
+						<li><span>🍲</span> Plat chaud</li>
+						<li><span>🧀</span> Fromage</li>
+						<li><span>🍰</span> Dessert</li>
+					</ul>
+					<div class="info-importante">
+						💡 Pas d'inscription sur place !
+					</div>
+
+					<div class="tarifs-box">
+						<div class="tarifs-details">
+							<div class="tarif-item">
+								<span class="tarif-label">Adulte</span>
+								<span class="tarif-price">23€</span>
+							</div>
+							<div class="tarif-item">
+								<span class="tarif-label">Moins de 13 ans</span>
+								<span class="tarif-price">1O€</span>
+							</div>
+						</div>
+						<div class="solidarite-mention">
+							❤️ Dont <strong>5€ reversés</strong> aux associations partenaires :
+							<br><br>- L'épi solidaire de Quingey
+							<br>- La maison des femmes pour l'égalité de Besançon
+						</div>
+					</div>
+				</div>
+			</section>
 			
 			<section class="contenu-section">
 				<div class="conteneur-centre">
@@ -629,6 +798,7 @@
 			</section>
 			
 			<section class="google-maps-preview" style="text-align: center; margin: 40px auto; max-width: 950px; padding: 0 20px">
+				<h2>Point de départ de la balade</h2>
 				<div class="google-card" style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 1px solid #dadce0;">
 		
 					<a href="https://maps.app.goo.gl/SWrpkGGipW9K36UV6" target="_blank" style="text-decoration: none; display: block; overflow: hidden;">
