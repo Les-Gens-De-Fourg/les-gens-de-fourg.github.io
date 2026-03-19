@@ -616,20 +616,21 @@
 			</div>
 			</section>
 			
-			<section class="map-section">
-				<h2>Lieu du marché</h2>
-				<div class="map-container">
-					<iframe 
-						width="100%" 
-						height="400" 
-						frameborder="0" 
-						scrolling="no" 
-						marginheight="0" 
-						marginwidth="0" 
-						src="https://www.openstreetmap.org/export/embed.html?bbox=5.808889567852021%2C47.09714519049757%2C5.8113786578178415%2C47.09849453829267&amp;layer=mapnik&amp;marker=47.097819868669426%2C5.81013411283493" 
-						style="border: 1px solid #ccc; border-radius: 8px;">
-					</iframe>					
-				</div>				
+			<section class="google-maps-preview" style="text-align: center; margin: 40px auto; max-width: 950px; padding: 0 20px">
+				<div class="google-card" style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 1px solid #dadce0;">
+		
+					<a href="https://maps.app.goo.gl/SWrpkGGipW9K36UV6" target="_blank" style="text-decoration: none; display: block; overflow: hidden;">
+						<img src="cartes/place.png" alt="Emplacement sur Google Maps" 
+							 style="width: 100%; display: block; transition: filter 0.3s ease;" 
+							 onmouseover="this.style.filter='brightness(90%)'" 
+							 onmouseout="this.style.filter='brightness(100%)'">
+						
+						<div style="background: white; display: flex; align-items: center; justify-content: center; border-top: 1px solid #f1f3f4;">
+							<img src="https://www.gstatic.com/images/branding/product/2x/maps_96in128dp.png" alt="Google Maps" style="width: 20px; margin-right: 10px;">
+							<span>Cliquez sur la carte pour l'ouvrir dans Google Maps.</span>
+						</div>
+					</a>
+				</div>
 			</section>
 			
         </main>
