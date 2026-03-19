@@ -536,123 +536,92 @@
 			display: inline-block; /* Pour que la barre ne fasse pas toute la largeur */
 		}
 		
-		/* --- Styles pour le bandeau FÊTE --- */
+/* --- Styles pour le bandeau Glassmorphism --- */
         
-        .bientot-fete-container {
-            /* Arrière-plan : Dégradé radiale super énergique */
-            background: radial-gradient(circle, #ff9f43 0%, #ff6b6b 40%, #2e86de 100%);
-            
-            /* Bordures originales : Coins très arrondis et ombre "pop-art" */
-            border: 6px solid #feca57; /* Jaune soleil */
-            border-radius: 50px; /* Très arrondi */
-            box-shadow: 10px 10px 0 #2c3e50; /* Ombre nette et colorée */
-            
-            /* Espacement et centrage */
-            max-width: 750px;
-            margin: 50px auto;
-            padding: 50px 30px;
-            text-align: center;
-            
-            /* Police et positionnement */
-            font-family: 'Mulish', sans-serif;
-            position: relative;
-            overflow: hidden;
-            
-            /* Animation d'échelle (pulsation) */
-            animation: popIn 1s ease-out;
+        .bientot-glass-section {
+            /* Un fond avec un dégradé de couleurs vives mais douces */
+            background: linear-gradient(45deg, #f39c12, #e74c3c, #9b59b6);
+            padding: 60px 20px;
+            border-radius: 20px;
+            margin: 30px auto;
+            max-width: 850px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        /* --- Décorations (Confettis/Points) --- */
-        .bientot-fete-container::before,
-        .bientot-fete-container::after {
-            content: '';
-            position: absolute;
-            width: 15px; height: 15px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.6);
-            opacity: 0.8;
+        .bientot-glass-card {
+            /* L'effet "Verre" */
+            background: rgba(255, 255, 255, 0.15); /* Blanc très transparent */
+            backdrop-filter: blur(10px); /* Le flou magique */
+            -webkit-backdrop-filter: blur(10px);
+            
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        /* Confettis aléatoires */
-        .bientot-fete-container::before { top: 20px; left: 30px; box-shadow: 40px 60px 0 #48dbfb, 120px 20px 0 #1dd1a1; }
-        .bientot-fete-container::after { bottom: 20px; right: 30px; box-shadow: -40px -60px 0 #ff9f43, -120px -20px 0 #ff6b6b; }
 
         /* --- Le Texte --- */
-        
-        .bientot-fete-texte {
-            color: #2c3e50; /* Couleur de texte sombre pour contraste */
-            line-height: 1.4;
-            margin: 0;
-        }
 
-        /* 1ère phrase : L'accroche explosive */
-        .bientot-fete-accroche {
-            font-size: 2.5rem;
-            font-weight: 900; /* Super gras */
-            text-transform: uppercase;
-            letter-spacing: -1px;
-            margin-bottom: 20px;
+        .glass-titre {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 15px;
             display: block;
-            
-            /* Ton style de lettres blanches à contour noir ! */
-            color: white;
-            text-shadow: 
-                -2px -2px 0 #2c3e50, /* Contour plus épais pour le fun */
-                 2px -2px 0 #2c3e50,
-                -2px  2px 0 #2c3e50,
-                 2px  2px 0 #2c3e50;
+            /* Ton style signature : contour noir */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
         }
 
-        /* 2ème phrase : L'annonce "Badge" */
-        .bientot-fete-edition {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: white;
-            background: linear-gradient(to right, #ee5253, #feca57); /* Dégradé dans le badge */
-            padding: 10px 25px;
-            border-radius: 25px; /* Forme pilule */
-            display: inline-block;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            transform: rotate(-3deg); /* Petite rotation fun */
-        }
-
-        /* Le reste du texte : Plus aéré */
-        .bientot-fete-patience {
+        .glass-badge {
+            background: #fff;
+            color: #e74c3c;
+            padding: 4px 15px;
+            border-radius: 50px;
+            font-weight: bold;
             font-size: 1.2rem;
-            font-weight: 400;
-            color: white; /* Texte blanc pour lisibilité */
+            display: inline-block;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .glass-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
             margin-bottom: 25px;
             display: block;
-            opacity: 0.9;
+            font-weight: 300;
         }
 
-        /* La conclusion : Soulignée et festive */
-        .bientot-fete-reviens {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #2c3e50;
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 8px 15px;
-            border-radius: 5px;
-            display: inline-block;
-            box-shadow: 3px 3px 0 #ee5253;
+        .glass-footer {
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 20px;
+            display: block;
         }
 
-        /* --- Animations --- */
-        @keyframes popIn {
-            0% { opacity: 0; transform: scale(0.5); }
-            100% { opacity: 1; transform: scale(1); }
+        /* --- Animation de flottement --- */
+        .bientot-glass-card {
+            animation: float 4s ease-in-out infinite;
         }
 
-        /* --- Adaptabilité Mobile --- */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Mobile */
         @media (max-width: 600px) {
-            .bientot-fete-container { padding: 30px 15px; margin: 20px; border-radius: 25px; }
-            .bientot-fete-accroche { font-size: 1.8rem; }
-            .bientot-fete-edition { font-size: 1.4rem; transform: rotate(0deg); } /* On enlève la rotation sur mobile */
-            .bientot-fete-reviens { font-size: 1.1rem; }
+            .glass-titre { font-size: 1.6rem; }
+            .bientot-glass-card { padding: 25px; }
         }
-		
-		
     </style>
 </head>
 <body>
@@ -685,13 +654,17 @@
         </header>
 		
         <main>
-  			<div class="bientot-fete-container">
-				<p class="bientot-fete-texte">
-					<span class="bientot-fete-accroche">Vous l'attendiez ? Il revient !</span>
-					<span class="bientot-fete-edition">L'édition 2026 est en cours de préparation.</span>
-					<span class="bientot-fete-patience">Nous avons hâte de vous en dire plus, mais il faudra encore un peu de patience.</span>
-					<span class="bientot-fete-reviens">Revenez très vite sur cette page ! 🎉</span>
-				</p>
+  			<div class="bientot-glass-section">
+				<div class="bientot-glass-card">
+					<span class="glass-titre">Vous l'attendiez ? l'évenement reviens !</span>
+					<div class="glass-badge">Édition 2026 en préparation</div>
+					<span class="glass-description">
+						Nous avons hâte de vous en dire plus, mais il faudra encore un peu de patience.
+					</span>
+					<span class="glass-footer">
+						Revenez très vite pour les annonces
+					</span>
+				</div>
 			</div>
 			
 			<section class="info-section">
