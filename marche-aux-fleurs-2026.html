@@ -71,8 +71,8 @@
 
         /* Style du Nom de l'Association (à gauche) */
         .brand-name {
-            font-size: 0.7rem;
-            font-weight: 800;
+            font-size: 1.4rem;
+            font-weight: 700;
             color: var(--teal-dark);
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -381,21 +381,48 @@
 			box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 		}
 		
-		.countdown-container {
+		.countdown-container {	
 			text-align: center;
 			padding: 30px;
 			background: #fff;
 			background-color: rgba(0, 0, 0, 0);
 			border-radius: 15px;
 			box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-			margin: 20px auto;
+			margin: 0px auto;
 			max-width: 600px;
+		}
+
+		.hero-date {
+            color: white; /* Couleur de l'intérieur des lettres */
+			text-shadow: 
+				-1px -1px 0 #555,  
+				 1px -1px 0 #555,
+				-1px  1px 0 #555,
+				 1px  1px 0 #555,
+				 2px  2px 4px rgba(0,0,0,0.5); /* Petite ombre portée pour donner du relief */
+				 font-size: 1.7rem;
+		}
+
+		.countdown-title {
+			color: white; /* Couleur de l'intérieur des lettres */
+			text-shadow: 
+				-1px -1px 0 #555,  
+				 1px -1px 0 #555,
+				-1px  1px 0 #555,
+				 1px  1px 0 #555,
+				 2px  2px 4px rgba(0,0,0,0.5); /* Petite ombre portée pour donner du relief */
+				 font-size: 1.3rem;
 		}
 
 		#countdown {
 			display: flex;
 			justify-content: center;
-			gap: 15px;
+			gap: 15px;text-shadow: 
+				-1px -1px 0 #555,  
+				 1px -1px 0 #555,
+				-1px  1px 0 #555,
+				 1px  1px 0 #555,
+				 2px  2px 4px rgba(0,0,0,0.5); /* Petite ombre portée pour donner du relief */
 		}
 
 		.time-block {
@@ -492,6 +519,21 @@
                 max-width: 1000px;  /* Sécurité : ne dépasse jamais 1000px de large */
             }
         }
+		
+		h1 {
+            color: white; /* Couleur de l'intérieur des lettres */
+			text-shadow: 
+				-1px -1px 0 #555,  
+				 1px -1px 0 #555,
+				-1px  1px 0 #555,
+				 1px  1px 0 #555,
+				 2px  2px 4px rgba(0,0,0,0.5); /* Petite ombre portée pour donner du relief */
+
+			/* --- Tes autres réglages --- */
+			font-size: 2.0rem;
+			text-align: center;
+			display: inline-block; /* Pour que la barre ne fasse pas toute la largeur */
+		}
     </style>
 </head>
 <body>
@@ -500,9 +542,7 @@
         <header>
             <nav class="main-nav">
                 <div class="brand-name">
-					<h1>
-						<a href="index.html" style="text-decoration: none; color: inherit;">Les Gens de Fourg</a>
-					</h1>
+					<a href="index.html" style="text-decoration: none; color: inherit;">Les Gens de Fourg</a>
 				</div>
 
                 <div class="nav-right">
@@ -528,7 +568,7 @@
 		
         <main>
             <section class="hero-banner-page">
-                <a>Marché aux fleurs et aux producteurs</a>
+                <h1>Marché aux fleurs et aux producteurs</h1>
 				<div class="countdown-container">
 				<p class="hero-date">Rendez-vous le 08 Mai 2026</p>
 				<h2 class="countdown-title">Ouverture du marché dans :</h2>
