@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Site officiel de l'association Les gens de Fourg.  Retrouvez nos autres événements : Loto de Fourg, Corrida de Fourg, Course de caisses à savon de Fourg, Balade gourmande de Fourg, marché aux fleur et des producteur de Fourg, marché de Noel de Fourg">
+	<meta name="description" content="Page officielle du marché aux fleur et aux producteurs organisée par l'association Les gens de Fourg. Retrouvez nos autres événements : Loto de Fourg, Corrida de Fourg, Course de caisses à savon de Fourg, Balade gourmande de Fourg, marché aux fleur et des producteur de Fourg, marché de Noel de Fourg">
 	<meta name="apple-mobile-web-app-title" content="Les Gens de Fourg">
 	<meta name="application-name" content="Les Gens de Fourg">
 	
@@ -18,7 +18,7 @@
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <title>Les Gens de Fourg</title>
+    <title>Marché aux fleurs et aux producteurs</title>
     <style>
         /* --- VARIABLES ET RESET --- */
         :root {
@@ -137,7 +137,7 @@
 		
 		.hero-banner-page {
 			/* Le chemin vers ton image */
-			background-image: url('images/fond-trail.png');
+			background-image: url('marche-aux-fleurs/marche-aux-fleurs-2026-fond.png');
 			
 			/* L'image couvrira toute la section sans être écrasée */
 			background-size: cover;
@@ -466,27 +466,36 @@
 			}
 		}
 		
-		/* 1. Un conteneur pour centrer et limiter un peu la largeur max (optionnel mais conseillé) */
-        .photo-container {
+		/* 1. Conteneur principal (pour centrer l'image dans la page) */
+        .photo-responsive-container {
             width: 100%;
-            max-width: 1200px; /* Largeur maximale sur grand écran pour ne pas que l'image soit géante */
-            margin: 0 auto;    /* Centre le conteneur */
-            padding: 0 15px;   /* Petite marge de sécurité sur les côtés */
-            box-sizing: border-box; /* Pour que le padding ne s'ajoute pas à la largeur */
+            display: flex;
+            justify-content: center; /* Centre l'image horizontalement */
+            margin-bottom: 40px      /* Espace en dessous */
         }
 
-        /* 2. La classe pour l'image elle-même */
-        .img-large {
-            width: 100%;       /* Prend toute la largeur de son conteneur (photo-container) */
-            height: auto;      /* Garde les proportions de l'image (pas de déformation) */
-            display: block;    /* Enlève l'espace indésirable sous l'image */
-            border-radius: 8px; /* Optionnel : arrondit légèrement les coins */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Optionnel : ajoute une petite ombre portée */
+        /* 2. Style de base de l'image */
+        .img-adaptative {
+            height: auto;           /* Garde les proportions (pas de déformation) */
+            display: block;
+            border-radius: 8px;     /* Optionnel : coins arrondis */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Optionnel : ombre */
+        }
+
+        .img-adaptative {
+            width: 80%;             /* Prend 80% de la largeur sur téléphone */
+        }
+
+        @media (min-width: 1024px) {
+            .img-adaptative {
+                width: 50%;         /* Ne prend plus que 50% sur PC */
+                max-width: 1000px;  /* Sécurité : ne dépasse jamais 1000px de large */
+            }
         }
     </style>
 </head>
 <body>
-	<!-- <div class="bg-fixe"></div> Pour avoir un fond avec une image -->
+
     <div class="site-container">
         <header>
             <nav class="main-nav">
@@ -505,7 +514,7 @@
                     <ul class="menu-list">
                         <li><a href="index.html">Accueil</a></li>
 						<li><a href="balade-gourmande-2026.html">Balade gourmande</a></li>
-						<li><a href="#">Marché aux fleurs</a></li>
+						<li><a href="marche-aux-fleurs-2026.html">Marché aux fleurs</a></li>
 						<li><a href="#">Caisses à savon</a></li>
 						<li><a href="corrida.html">Corrida</a></li>
 						<li><a href="#">Loto</a></li>
@@ -514,67 +523,58 @@
                 </div>
             </nav>
         </header>
-
+		
         <main>
-            <section class="hero-banner">
-                <a>Nos evenements</a>
-            </section>
-
-			<section class="contenu-section">
-
-            <section class="links-grid">
-				<a href="balade-gourmande-2026.html" class="link-card">
-					<img src="affiches/balade-gourmande-2026.png" alt="" class="card-icon">
-				</a>
-                <a href="marche-aux-fleurs-2026.html" class="link-card">
-					<img src="affiches/marche-aux-fleurs-2026.png" alt="" class="card-icon">
-				</a>
-                <a href="" class="link-card">
-					<img src="affiches/caisse-a-savon.jfif" alt="" class="card-icon">
-				</a>				
-                <a href="corrida.html" class="link-card">
-					<img src="affiches/corrida.jfif" alt="" class="card-icon">
-				</a>
-				<a href="" class="link-card">
-					<img src="affiches/loto.jfif" alt="" class="card-icon">
-				</a>
-				<a href="" class="link-card">
-					<img src="affiches/marche-de-noel.jfif" alt="" class="card-icon">
-				</a>
+            <section class="hero-banner-page">
+                <a>Marché aux fleurs et aux producteurs</a>
+				<div class="countdown-container">
+				<p class="hero-date">Rendez-vous le 08 Mai 2026</p>
+				<h2 class="countdown-title">Ouverture du marché dans :</h2>
+				<div id="countdown">
+					<div class="time-block">
+						<span id="days">00</span>
+						<div class="label">Jours</div>
+					</div>
+					<div class="time-block">
+						<span id="hours">00</span>
+						<div class="label">Heures</div>
+					</div>
+					<div class="time-block">
+						<span id="minutes">00</span>
+						<div class="label">Min</div>
+					</div>
+					<div class="time-block">
+						<span id="seconds">00</span>
+						<div class="label">Sec</div>
+					</div>
+				</div>
+			</div>
             </section>
 			
+            <div class="photo-responsive-container">
+				<img src="affiches/marche-aux-fleurs-2026.png" alt="Départ de la course à Fourg" class="img-adaptative">
+			</div>
+			
 			<section class="info-section">
-			<div class="container">				
+			<div class="container">
 				<div class="info-grid">
 					<div class="info-item">
-						<div class="info-icon">📞</div>
-						<h3>Adresse</h3>
-						<p>1 Place de la mairie<br>25440 Fourg</p>
+						<div class="info-icon">📍</div>
+						<h3>Adresse :</h3>
+						<p>Place de la mairie</p>
+						<p>25440 Fourg</p>
 					</div>
 					<div class="info-item">
 						<div class="info-icon">📞</div>
 						<h3>Contact</h3>
 						<p>Email : assocgensdefourg@gmail.com<br>Tél : 06.73.58.59.74</p>
 					</div>
-					<div class="info-item social-box">
-						<div class="info-icon">🌐</div> <h3>Suivez-nous</h3>
-						
-						<div class="social-icons-container">
-							<a href="https://www.facebook.com/Fourgvillage/" target="_blank" title="Rejoignez-nous sur Facebook" class="social-icon-link facebook">
-								<i class="fa-brands fa-facebook"></i>
-							</a>
-							
-							<a href="https://www.instagram.com/lesgensdefourg/" target="_blank" title="Suivez-nous sur Instagram" class="social-icon-link instagram">
-								<i class="fa-brands fa-instagram"></i>
-							</a>
-						</div>
-					</div>
 				</div>
 			</div>
 			</section>
 			
 			<section class="map-section">
-				<h2>Nous trouver à Fourg</h2>
+				<h2>Lieu du marché</h2>
 				<div class="map-container">
 					<iframe 
 						width="100%" 
@@ -592,9 +592,39 @@
         </main>
     </div>
 
-    <footer style="text-align: center; padding: 20px; margin-top: 50px; border-top: 1px solid #eee;">
-		<p>&copy; 2026 Les gens de Fourg - Tous droits réservés</p>
-		<a href="mentions-legales.html" style="color: #999; text-decoration: none; font-size: 0.8rem;">Mentions légales</a>
-	</footer>
+    <footer>
+        <p>&copy; 2026 Les gens de Fourg - Association</p>
+    </footer>
+
+
+<script>
+    // FIXE LA DATE ICI (Année, Mois-1, Jour, Heure, Minute)
+    // Attention : Janvier = 0, Septembre = 8
+    const eventDate = new Date(2026, 4, 8, 9, 0, 0).getTime();
+
+    const updateCountdown = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+
+        // Calculs mathématiques pour les jours, heures, minutes, secondes
+        const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Affichage des résultats
+        document.getElementById("days").innerText = d;
+        document.getElementById("hours").innerText = h;
+        document.getElementById("minutes").innerText = m;
+        document.getElementById("seconds").innerText = s;
+
+        // Si le compte à rebours est fini
+        if (distance < 0) {
+            clearInterval(updateCountdown);
+            document.getElementById("countdown").innerHTML = "<h3>C'est parti !</h3>";
+        }
+    }, 1000);
+</script>
+
 </body>
 </html>
