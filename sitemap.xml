@@ -22,14 +22,30 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://les-gens-de-fourg.github.io/corrida.html</loc>
+    <loc>https://les-gens-de-fourg.github.io/corrida-2026.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+  <url>
+    <loc>https://les-gens-de-fourg.github.io/loto-2026.html</loc>
     <lastmod>2026-03-19</lastmod>
     <priority>0.5</priority>
+  </url>
+  <url>
+  <url>
+    <loc>https://les-gens-de-fourg.github.io/marche-de-noel-2026.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://les-gens-de-fourg.github.io/preparation-en-cours.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <priority>0.1</priority>
   </url>
   <url>
     <loc>https://les-gens-de-fourg.github.io/mentions-legales.html</loc>
 	<lastmod>2026-03-19</lastmod>
     <priority>0.1</priority>
   </url>
-
 </urlset>

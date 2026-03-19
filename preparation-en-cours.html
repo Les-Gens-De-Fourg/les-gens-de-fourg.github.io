@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Page officielle de la course de caisse à savon organisée par l'association Les gens de Fourg. Retrouvez nos autres événements : Loto de Fourg, Corrida de Fourg, Course de caisses à savon de Fourg, Balade gourmande de Fourg, marché aux fleur et des producteur de Fourg, marché de Noel de Fourg">
+	<meta name="description" content="Site officiel de l'association Les gens de Fourg.  Retrouvez nos autres événements : Loto de Fourg, Corrida de Fourg, Course de caisses à savon de Fourg, Balade gourmande de Fourg, marché aux fleur et des producteur de Fourg, marché de Noel de Fourg">
 	<meta name="apple-mobile-web-app-title" content="Les Gens de Fourg">
 	<meta name="application-name" content="Les Gens de Fourg">
 	
@@ -18,7 +18,7 @@
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <title>Course de caisse à savon de Fourg</title>
+    <title>Les gens de Fourg</title>
     <style>
         /* --- VARIABLES ET RESET --- */
         :root {
@@ -137,7 +137,7 @@
 		
 		.hero-banner-page {
 			/* Le chemin vers ton image */
-			background-image: url('caisse-a-savon/caisse-a-savon-2026-fond.png');
+			background-image: url('balade-gourmande/balade-gourmande-2026-fond.png');
 			
 			/* L'image couvrira toute la section sans être écrasée */
 			background-size: cover;
@@ -535,10 +535,127 @@
 			text-align: center;
 			display: inline-block; /* Pour que la barre ne fasse pas toute la largeur */
 		}
+		
+		/* --- Styles pour le bandeau FÊTE --- */
+        
+        .bientot-fete-container {
+            /* Arrière-plan : Dégradé radiale super énergique */
+            background: radial-gradient(circle, #ff9f43 0%, #ff6b6b 40%, #2e86de 100%);
+            
+            /* Bordures originales : Coins très arrondis et ombre "pop-art" */
+            border: 6px solid #feca57; /* Jaune soleil */
+            border-radius: 50px; /* Très arrondi */
+            box-shadow: 10px 10px 0 #2c3e50; /* Ombre nette et colorée */
+            
+            /* Espacement et centrage */
+            max-width: 750px;
+            margin: 50px auto;
+            padding: 50px 30px;
+            text-align: center;
+            
+            /* Police et positionnement */
+            font-family: 'Mulish', sans-serif;
+            position: relative;
+            overflow: hidden;
+            
+            /* Animation d'échelle (pulsation) */
+            animation: popIn 1s ease-out;
+        }
+
+        /* --- Décorations (Confettis/Points) --- */
+        .bientot-fete-container::before,
+        .bientot-fete-container::after {
+            content: '';
+            position: absolute;
+            width: 15px; height: 15px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.6);
+            opacity: 0.8;
+        }
+        /* Confettis aléatoires */
+        .bientot-fete-container::before { top: 20px; left: 30px; box-shadow: 40px 60px 0 #48dbfb, 120px 20px 0 #1dd1a1; }
+        .bientot-fete-container::after { bottom: 20px; right: 30px; box-shadow: -40px -60px 0 #ff9f43, -120px -20px 0 #ff6b6b; }
+
+        /* --- Le Texte --- */
+        
+        .bientot-fete-texte {
+            color: #2c3e50; /* Couleur de texte sombre pour contraste */
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        /* 1ère phrase : L'accroche explosive */
+        .bientot-fete-accroche {
+            font-size: 2.5rem;
+            font-weight: 900; /* Super gras */
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+            display: block;
+            
+            /* Ton style de lettres blanches à contour noir ! */
+            color: white;
+            text-shadow: 
+                -2px -2px 0 #2c3e50, /* Contour plus épais pour le fun */
+                 2px -2px 0 #2c3e50,
+                -2px  2px 0 #2c3e50,
+                 2px  2px 0 #2c3e50;
+        }
+
+        /* 2ème phrase : L'annonce "Badge" */
+        .bientot-fete-edition {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            background: linear-gradient(to right, #ee5253, #feca57); /* Dégradé dans le badge */
+            padding: 10px 25px;
+            border-radius: 25px; /* Forme pilule */
+            display: inline-block;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transform: rotate(-3deg); /* Petite rotation fun */
+        }
+
+        /* Le reste du texte : Plus aéré */
+        .bientot-fete-patience {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: white; /* Texte blanc pour lisibilité */
+            margin-bottom: 25px;
+            display: block;
+            opacity: 0.9;
+        }
+
+        /* La conclusion : Soulignée et festive */
+        .bientot-fete-reviens {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2c3e50;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 8px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            box-shadow: 3px 3px 0 #ee5253;
+        }
+
+        /* --- Animations --- */
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.5); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* --- Adaptabilité Mobile --- */
+        @media (max-width: 600px) {
+            .bientot-fete-container { padding: 30px 15px; margin: 20px; border-radius: 25px; }
+            .bientot-fete-accroche { font-size: 1.8rem; }
+            .bientot-fete-edition { font-size: 1.4rem; transform: rotate(0deg); } /* On enlève la rotation sur mobile */
+            .bientot-fete-reviens { font-size: 1.1rem; }
+        }
+		
+		
     </style>
 </head>
 <body>
-
     <div class="site-container">
         <header>
             <nav class="main-nav">
@@ -568,34 +685,13 @@
         </header>
 		
         <main>
-            <section class="hero-banner-page">
-                <h1>Course de caisse à savon</h1>
-				<div class="countdown-container">
-				<p class="hero-date">Rendez-vous le 31 Mai 2026</p>
-				<h2 class="countdown-title">Début dans :</h2>
-				<div id="countdown">
-					<div class="time-block">
-						<span id="days">00</span>
-						<div class="label">Jours</div>
-					</div>
-					<div class="time-block">
-						<span id="hours">00</span>
-						<div class="label">Heures</div>
-					</div>
-					<div class="time-block">
-						<span id="minutes">00</span>
-						<div class="label">Min</div>
-					</div>
-					<div class="time-block">
-						<span id="seconds">00</span>
-						<div class="label">Sec</div>
-					</div>
-				</div>
-			</div>
-            </section>
-			
-            <div class="photo-responsive-container">
-				<img src="affiches/caisse-a-savon-2026.jpg" alt="Départ de la course à Fourg" class="img-adaptative">
+  			<div class="bientot-fete-container">
+				<p class="bientot-fete-texte">
+					<span class="bientot-fete-accroche">Vous l'attendiez ? Il revient !</span>
+					<span class="bientot-fete-edition">L'édition 2026 est en cours de préparation.</span>
+					<span class="bientot-fete-patience">Nous avons hâte de vous en dire plus, mais il faudra encore un peu de patience.</span>
+					<span class="bientot-fete-reviens">Revenez très vite sur cette page ! 🎉</span>
+				</p>
 			</div>
 			
 			<section class="info-section">
@@ -614,60 +710,13 @@
 					</div>
 				</div>
 			</div>
-			</section>
-			
-			<section class="map-section">
-				<h2>Lieu du marché</h2>
-				<div class="map-container">
-					<iframe 
-						width="100%" 
-						height="400" 
-						frameborder="0" 
-						scrolling="no" 
-						marginheight="0" 
-						marginwidth="0" 
-						src="https://www.openstreetmap.org/export/embed.html?bbox=5.808889567852021%2C47.09714519049757%2C5.8113786578178415%2C47.09849453829267&amp;layer=mapnik&amp;marker=47.097819868669426%2C5.81013411283493" 
-						style="border: 1px solid #ccc; border-radius: 8px;">
-					</iframe>					
-				</div>				
-			</section>
-			
+			</section>			
         </main>
     </div>
 
     <footer>
         <p>&copy; 2026 Les gens de Fourg - Association</p>
     </footer>
-
-
-<script>
-    // FIXE LA DATE ICI (Année, Mois-1, Jour, Heure, Minute)
-    // Attention : Janvier = 0, Septembre = 8
-    const eventDate = new Date(2026, 4, 31, 10, 0, 0).getTime();
-
-    const updateCountdown = setInterval(function() {
-        const now = new Date().getTime();
-        const distance = eventDate - now;
-
-        // Calculs mathématiques pour les jours, heures, minutes, secondes
-        const d = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const s = Math.floor((distance % (1000 * 60)) / 1000);
-
-        // Affichage des résultats
-        document.getElementById("days").innerText = d;
-        document.getElementById("hours").innerText = h;
-        document.getElementById("minutes").innerText = m;
-        document.getElementById("seconds").innerText = s;
-
-        // Si le compte à rebours est fini
-        if (distance < 0) {
-            clearInterval(updateCountdown);
-            document.getElementById("countdown").innerHTML = "<h3>C'est parti !</h3>";
-        }
-    }, 1000);
-</script>
 
 </body>
 </html>
