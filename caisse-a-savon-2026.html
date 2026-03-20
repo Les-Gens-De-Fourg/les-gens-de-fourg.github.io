@@ -23,7 +23,7 @@
         /* --- VARIABLES ET RESET --- */
         :root {
             --teal-dark: #1A5F7A; 
-            --green-main: #69B34C; 
+            --green-main: #27AE60;  
             --bg-body: #F4F7F6;
             --text-on-dark: #FFFFFF;
             --text-body: #333333;
@@ -370,6 +370,24 @@
 		}
 
 		/* Le style de chaque bloc individuel */
+		.info-item2 {
+			flex: 1;                /* Force les blocs à avoir la même largeur */
+			min-width: 280px;       /* Empêche les blocs de devenir trop étroits */
+			max-width: 350px;       /* Empêche les blocs de devenir trop larges */
+			background: white;
+			padding: 25px;
+			border-radius: 12px;
+			text-align: center;
+			box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+			background-color: #ffcc00
+		}
+		
+		.info-item2:hover {
+			background-color: #e6b800; /* Devient un peu plus foncé */
+			transform: scale(1.05);    /* Grossit très légèrement */
+			box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+		}
+		
 		.info-item {
 			flex: 1;                /* Force les blocs à avoir la même largeur */
 			min-width: 280px;       /* Empêche les blocs de devenir trop étroits */
@@ -535,6 +553,126 @@
 			text-align: center;
 			display: inline-block; /* Pour que la barre ne fasse pas toute la largeur */
 		}
+		    /* --- LE STYLE "MAÎTRE" DES CARTES ÉVÉNEMENTS --- */
+.evenement-card {
+    max-width: 700px; /* Largeur strictement identique */
+    margin: 40px auto;
+    background: #ffffff;
+    border-radius: 25px; /* Angles arrondis identiques */
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    border: 1px solid #e0e0e0;
+}
+
+.evenement-header {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    color: white;
+    padding: 30px 20px 40px 20px;
+    text-align: center;
+}
+
+.evenement-header .header-top {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.evenement-header h2 {
+    margin: 10px 0 5px 0;
+    font-size: 2.5rem;
+    text-shadow: 1px 2px 0px rgba(0,0,0,0.2); /* Ton style signature */
+    line-height: 1.1;
+}
+
+.evenement-header .subtitle {
+    font-style: italic;
+    opacity: 0.95;
+    font-size: 1.1rem;
+}
+
+.evenement-content {
+    padding: 35px; /* Padding interne identique pour l'alignement */
+    color: #444;
+    line-height: 1.7;
+}
+
+.evenement-content .intro-text {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.05rem;
+}
+
+/* --- Style des "Pôles" (les blocs internes) --- */
+.poles-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pole-item {
+    display: flex;
+    align-items: center;
+    background: #fdfdfd;
+    padding: 15px 20px;
+    border-radius: 15px;
+    border: 1px solid #eaeaea;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+	.pole-item:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+		border-color: #d4ede0;
+	}
+
+	.pole-icon {
+		font-size: 2.8rem;
+		margin-right: 20px;
+		width: 65px; /* Largeur d'icône unifiée */
+		text-align: center;
+		flex-shrink: 0;
+	}
+
+	.pole-text h3 {
+		margin: 0 0 5px 0;
+		color: #27ae60;
+		font-size: 1.3rem;
+	}
+
+	.pole-text p, .pole-text ul {
+		margin: 0;
+		font-size: 0.95rem;
+		color: #666;
+	}
+
+	.evenement-content .conclusion-text {
+		text-align: center;
+		margin-top: 35px;
+		font-weight: 600;
+		color: #2c3e50;
+		font-size: 1.1rem;
+	}
+
+	/* Les badges date/heure */
+	.badge-date, .badge-heure {
+		background: rgba(255,255,255,0.25);
+		padding: 8px 18px;
+		border-radius: 25px;
+		font-size: 1rem;
+		font-weight: 600;
+		backdrop-filter: blur(5px);
+	}
+
+	/* Mode Mobile */
+	@media (max-width: 600px) {
+		.evenement-header h2 { font-size: 1.8rem; }
+		.evenement-header .header-top { flex-direction: column; gap: 10px; }
+		.pole-item { flex-direction: column; text-align: center; padding: 20px; }
+		.pole-icon { margin: 0 0 15px 0; font-size: 3rem; width: auto; }
+	}
     </style>
 </head>
 <body>
@@ -594,9 +732,63 @@
 			</div>
             </section>
 			
-            <div class="photo-responsive-container">
-				<img src="affiches/caisse-a-savon-2026.jpg" alt="Départ de la course à Fourg" class="img-adaptative">
+            <section class="evenement-card">
+				<div class="evenement-header">
+					<div class="header-top">
+						<span class="badge-date">📅 31 Mai 2026</span>
+						<span class="badge-heure">🕒 De 10h00 à 18h00</span>
+					</div>
+					<h2>Course de<br>Caisses à Savon</h2>
+					<p class="subtitle">Descente endiablée au cœur du village !</p>
+				</div>
+
+				<div class="evenement-content">
+					<p class="intro-text">Venez dévaler nos pentes en caisses à savon. Entre virages, chicanes et obstacles, venez découvrir nos parcours.<br>
+						Après les essais le matin, place chrono l'après-midi.
+					</p>
+					<div class="poles-container">
+						<div class="pole-item">
+							<div class="pole-icon">🏎️</div>
+							<div class="pole-text">
+								<h3>Parcours & Catégories</h3>
+								<ul>
+									<li><strong>13 ans et + :</strong> Descente d'environ 700m.</li>
+									<li><strong>8 - 12 ans :</strong> Descente de 500m.</li>
+									<li><strong>7 ans et - :</strong> Course de tracteurs à pédales</li>
+								</ul>
+							</div>
+						</div>
+						
+						<div class="pole-item">
+							<div class="pole-icon">🍕</div>
+							<div class="pole-text">
+								<h3>Restauration & Buvette</h3>
+								<p>Tomtom Pizzas, La Rolling Popote et la buvette des bénévoles.</p>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</section>
+			
+			<section class="info-section">
+			<div class="container" >
+				<div class="info-grid">
+					<div class="info-item2">
+						<a href="caisse-a-savon/dossier-inscription-2026.pdf" target="_blank" >
+							<div class="info-icon">📝</div>
+							<h3>Dossier d'inscription</h3>
+						</a>
+					</div>
+					<div class="info-item2">
+						<a href="caisse-a-savon/reglement-2026.pdf" target="_blank" >
+							<div class="info-icon">📃</div>
+							<h3>Règlement de la course</h3>
+						</a>
+					</div>
+				</div>
 			</div>
+			</section>
 			
 			<section class="info-section">
 			<div class="container">

@@ -23,7 +23,7 @@
         /* --- VARIABLES ET RESET --- */
         :root {
             --teal-dark: #1A5F7A; 
-            --green-main: #69B34C; 
+            --green-main: #27AE60; 
             --bg-body: #F4F7F6;
             --text-on-dark: #FFFFFF;
             --text-body: #333333;
@@ -535,6 +535,119 @@
 			text-align: center;
 			display: inline-block; /* Pour que la barre ne fasse pas toute la largeur */
 		}
+		
+		/* --- Style Commun (Jumeau de la Balade) --- */
+			.marche-fleurs-card {
+				max-width: 700px;
+				margin: 40px auto;
+				background: #ffffff;
+				border-radius: 25px;
+				overflow: hidden;
+				box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+				font-family: 'Segoe UI', Roboto, sans-serif;
+				border: 1px solid #e0e0e0;
+			}
+
+			.marche-header {
+				/* Même dégradé vert "nature" */
+				background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+				color: white;
+				padding: 30px 20px 40px 20px;
+				text-align: center;
+			}
+
+			.header-top {
+				display: flex;
+				justify-content: center;
+				gap: 15px;
+				margin-bottom: 20px;
+				flex-wrap: wrap;
+			}
+
+			.badge-date, .badge-heure {
+				background: rgba(255,255,255,0.25);
+				padding: 8px 18px;
+				border-radius: 25px;
+				font-size: 1rem;
+				font-weight: 600;
+				letter-spacing: 0.5px;
+				backdrop-filter: blur(5px);
+			}
+
+			.marche-header h2 {
+				margin: 10px 0 5px 0;
+				font-size: 2.5rem; /* Légèrement plus petit pour tenir sur 2 lignes */
+				text-shadow: 1px 2px 0px rgba(0,0,0,0.2);
+				line-height: 1.1;
+			}
+
+			.subtitle {
+				font-style: italic;
+				opacity: 0.95;
+				font-size: 1.1rem;
+			}
+
+			.marche-content {
+				padding: 35px;
+				color: #444;
+				line-height: 1.7;
+			}
+
+			.intro-text {
+				text-align: center;
+				margin-bottom: 30px;
+				font-size: 1.05rem;
+			}
+
+			/* --- Style Spécifique au Marché (Les Pôles) --- */
+			.poles-container {
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+			}
+
+			.pole-item {
+				display: flex;
+				align-items: center;
+				background: #fdfdfd;
+				padding: 15px 20px;
+				border-radius: 15px;
+				border: 1px solid #eaeaea;
+				transition: transform 0.2s ease, box-shadow 0.2s ease;
+			}
+
+			.pole-item:hover {
+				transform: translateY(-3px);
+				box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+				border-color: #d4ede0;
+			}
+
+			.pole-icon {
+				font-size: 2.5rem;
+				margin-right: 20px;
+				width: 60px;
+				text-align: center;
+				flex-shrink: 0;
+			}
+
+			.pole-text h3 {
+				margin: 0 0 5px 0;
+				color: #27ae60;
+				font-size: 1.25rem;
+			}
+
+			.pole-text p {
+				margin: 0;
+				font-size: 0.95rem;
+				color: #666;
+			}
+
+			@media (max-width: 600px) {
+				.marche-header h2 { font-size: 1.8rem; }
+				.header-top { flex-direction: column; gap: 10px; }
+				.pole-item { flex-direction: column; text-align: center; padding: 20px; }
+				.pole-icon { margin: 0 0 15px 0; font-size: 3rem; width: auto; }
+			}
     </style>
 </head>
 <body>
@@ -594,9 +707,47 @@
 			</div>
             </section>
 			
-            <div class="photo-responsive-container">
-				<img src="affiches/marche-aux-fleurs-2026.png" alt="Départ de la course à Fourg" class="img-adaptative">
-			</div>
+            <section class="marche-fleurs-card">
+				<div class="marche-header">
+					<div class="header-top">
+						<span class="badge-date">📅 8 Mai 2026</span>
+						<span class="badge-heure">🕒 De 9h00 à 12h00</span>
+					</div>
+					<h2>Marché aux Fleurs<br>& aux Producteurs</h2>
+					<p class="subtitle">Un moment convivial au cœur du village</p>
+				</div>
+
+				<div class="marche-content">
+					<p class="intro-text">Venez passer un moment convivial et chaleureux lors de notre marché aux fleurs et aux producteurs. Venez découvrir les magnifiques plantes d'ornements et plants de jardin de l horticulture Knab. Vous pourrez également découvrir des produits de nos différents producteurs qui seront présents. Enfin vous pourrez prendre un moment pour vous désaltérer grâce à notre buvette ou des bénévoles se feront un plaisir de vous servir et de vous accueillir.</p>
+					
+					<div class="poles-container">
+						<div class="pole-item">
+							<div class="pole-icon">🌸</div>
+							<div class="pole-text">
+								<h3>Horticulture Knab</h3>
+								<p>Magnifiques plantes d'ornements et plants de jardin pour colorer vos extérieurs.</p>
+							</div>
+						</div>
+						
+						<div class="pole-item">
+							<div class="pole-icon">🧺</div>
+							<div class="pole-text">
+								<h3>Producteurs Locaux</h3>
+								<p>Découvrez les saveurs authentiques et les créations de nos artisans passionnés.</p>
+							</div>
+						</div>
+						
+						<div class="pole-item">
+							<div class="pole-icon">🥤</div>
+							<div class="pole-text">
+								<h3>Buvette & Accueil</h3>
+								<p>Prenez le temps de vous désaltérer ! Nos bénévoles vous accueilleront avec plaisir.</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
 			
 			<section class="info-section">
 			<div class="container">
