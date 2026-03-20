@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://les-gens-de-fourg.github.io/
+Sitemap: https://les-gens-de-fourg.github.io/sitemap.xml
