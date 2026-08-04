@@ -291,6 +291,39 @@
 			line-height: 1.3;
 		}
 		
+		.btn-parcours {
+			display: inline-block;
+			padding: 6px 12px;
+			background-color: #ED655F; /* Une couleur qui flashe (ex: Jaune) */
+			color: #333;               /* Texte foncé pour le contraste */
+			text-decoration: none;     /* Enlève le soulignement */
+			border-radius: 50px;       /* Forme arrondie "pilule" */
+			font-weight: bold;
+			text-transform: uppercase;
+			font-size: 1rem;
+			transition: all 0.3s ease; /* Animation fluide */
+			border: none;
+			cursor: pointer;
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}	
+		.btn-principalsmall {
+			display: inline-block;
+			padding: 6px 12px;
+			background-color: #ffcc00; /* Une couleur qui flashe (ex: Jaune) */
+			color: #333;               /* Texte foncé pour le contraste */
+			text-decoration: none;     /* Enlève le soulignement */
+			border-radius: 50px;       /* Forme arrondie "pilule" */
+			font-weight: bold;
+			text-transform: uppercase;
+			font-size: 1rem;
+			transition: all 0.3s ease; /* Animation fluide */
+			border: none;
+			cursor: pointer;
+			margin-top: 10px;
+			margin-bottom: 40px;
+		}
+		
 		/* Style du bouton principal */
 		.btn-principal {
 			display: inline-block;
@@ -736,6 +769,78 @@
 				  <a href="medias/corrida2026.mp4">MP4</a>
 				  .
 				</video>
+			</section>
+			
+			<section class="info-section">
+			<div class="container">
+				<div class="info-grid">
+					<div class="info-item">
+						<h3>Trail 20kms</h3>
+						<br>
+						<p>D+/D- : 600m</p>
+						<p>Départ : 9h00</p>
+						<br>
+						<a href="https://tracedetrail.fr/fr/trace/354261" class="btn-parcours" target="_blank" rel="noopener">Parcours</a><br>
+						<a href="https://courses.even-outdoor.com/index.php?m=courses&a=courses&resultats=&id_evenement=775" class="btn-principalsmall" target="_blank" rel="noopener">Inscription</a>
+					</div>
+					<div class="info-item">
+						<h3>Trail 10kms</h3>
+						<br>
+						<p>D+/D- : 150m</p>
+						<p>Départ : 9h30</p>
+						<br>
+						<a href="https://tracedetrail.fr/fr/trace/354262" class="btn-parcours" target="_blank" rel="noopener">Parcours</a><br>
+						<a href="https://courses.even-outdoor.com/index.php?m=courses&a=courses&resultats=&id_evenement=775" class="btn-principalsmall" target="_blank" rel="noopener">Inscription</a>
+					</div>
+					<div class="info-item">
+						<h3>Randonnée 10kms</h3>
+						<br>
+						<p>D+/D- : 150m</p>
+						<p>Départ : 8h45</p>
+						<br>
+						<a href="https://tracedetrail.fr/fr/trace/354262" class="btn-parcours" target="_blank" rel="noopener">Parcours</a><br>
+						<a href="https://courses.even-outdoor.com/index.php?m=courses&a=courses&resultats=&id_evenement=775" class="btn-principalsmall" target="_blank" rel="noopener">Inscription</a>
+					</div>
+				</div>
+			</div>
+			</section>
+			
+			<section class="info-section">
+			<div class="container">
+				<div class="info-grid">
+					<div class="info-item">
+						<h3>Courses enfants</h3>
+						<br>
+						<p>Minimes - 2012-2013 : 4.00 km</p>
+						<p>Benjamins - 2014-2015 : 3.00 km</p>
+						<p>Poussins - 2016-2017 : 1.50 km</p>
+						<p>Éveil Athlétique 2018-2020</p>
+						<p>Baby Athlé - 2021-2026</p>
+						<br>
+						<p>Départ : 14h00</p>
+						<br>
+						<a href="https://courses.even-outdoor.com/index.php?m=courses&a=courses&resultats=&id_evenement=775" class="btn-principalsmall" target="_blank" rel="noopener">Inscription</a>
+					</div>
+				</div>
+			</div>
+			</section>
+			
+			<section class="google-maps-preview" style="text-align: center; margin: 40px auto; max-width: 950px; padding: 0 20px">
+				<h2>Lieu de départ et d'arrivée des courses</h2>
+				<div class="google-card" style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 1px solid #dadce0;">
+		
+					<a href="https://maps.app.goo.gl/cjmsGk9p5xzXrihA9" target="_blank" style="text-decoration: none; display: block; overflow: hidden;">
+						<img src="cartes/fete.png" alt="Emplacement sur Google Maps" 
+							 style="width: 100%; display: block; transition: filter 0.3s ease;" 
+							 onmouseover="this.style.filter='brightness(90%)'" 
+							 onmouseout="this.style.filter='brightness(100%)'">
+						
+						<div style="background: white; display: flex; align-items: center; justify-content: center; border-top: 1px solid #f1f3f4;">
+							<img src="https://www.gstatic.com/images/branding/product/2x/maps_96in128dp.png" alt="Google Maps" style="width: 20px; margin-right: 10px;">
+							<span>Ouvrir dans Google Maps.</span>
+						</div>
+					</a>
+				</div>
 			</section>
 			
 			<section class="info-section">
