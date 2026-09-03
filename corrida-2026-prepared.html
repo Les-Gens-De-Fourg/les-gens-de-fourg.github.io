@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Page officielle de la corrida de Fourg organisée par l'association Les gens de Fourg. Retrouvez nos autres événements : Loto de Fourg, Corrida de Fourg, Course de caisses à savon de Fourg, Balade gourmande de Fourg, marché aux fleur et des producteur de Fourg, marché de Noel de Fourg">
+	<meta name="apple-mobile-web-app-title" content="Les Gens de Fourg">
+	<meta name="application-name" content="Les Gens de Fourg">
+	
+	<script type="application/ld+json">
+	{
+	  "@context" : "https://schema.org",
+	  "@type" : "WebSite",
+	  "name" : "Les Gens de Fourg",
+	  "url" : "https://les-gens-de-fourg.github.io/"
+	}
+	</script>
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>15eme Corrida de fourg</title>
+    <style>
+        /* --- VARIABLES ET RESET --- */
+        :root {
+            --teal-dark: #1A5F7A; 
+            --green-main: #27AE60; 
+            --bg-body: #F4F7F6;
+            --text-on-dark: #FFFFFF;
+            --text-body: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-body);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .site-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-grow: 1;
+        }
+
+        /* --- HEADER & NAVIGATION ALIGNÉE --- */
+        header {
+            padding: 0.5rem 0;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between; /* Aligne le titre à gauche et le menu à droite */
+            align-items: center;
+            position: relative;
+        }
+
+        /* Style du Nom de l'Association (à gauche) */
+        .brand-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--teal-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+			margin: 10px;
+        }
+
+        .menu-checkbox {
+            display: none;
+        }
+
+        /* Liste des liens (à droite sur ordinateur) */
+        .menu-list {
+            display: flex;
+            list-style: none;
+            gap: 1.2rem;
+        }
+
+        .menu-list a {
+            font-weight: 600;
+            padding: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .menu-list a:hover {
+            color: var(--green-main);
+        }
+
+        /* Bouton Hamburger (caché sur ordi) */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 30px;
+            height: 4px;
+            background-color: var(--teal-dark);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* --- CONTENU PRINCIPAL --- */
+        .hero-banner {
+            background-color: var(--teal-dark);
+            color: var(--text-on-dark);
+            text-align: center;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            margin: 1rem 0 2rem 0;
+        }
+
+        .hero-banner a {
+            font-size: 1.8rem;
+            font-weight: 600;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 5px;
+        }
+		
+		.hero-banner-page {
+			/* Le chemin vers ton image */
+			background-image: url('corrida/fond-trail.png');
+			
+			/* L'image couvrira toute la section sans être écrasée */
+			background-size: cover;
+			
+			/* L'image reste centrée même si on redimensionne la fenêtre */
+			background-position: center;
+			
+			/* L'image ne se répète pas si la section est grande */
+			background-repeat: no-repeat;
+			
+            color: var(--text-on-dark);
+            text-align: left;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            margin: 1rem 0 2rem 0;
+        }
+
+        .hero-banner-page a {
+            font-size: 1.8rem;
+            font-weight: 600;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 5px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--teal-dark);
+            color: var(--text-on-dark);
+            text-align: center;
+            padding: 2.5rem 0;
+            margin-top: auto;
+        }
+
+        /* --- RESPONSIVE : MOBILE --- */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex; /* Affiche les 3 barres à droite */
+            }
+
+            .menu-list {
+                display: none; /* Cache le menu */
+                flex-direction: column;
+                position: absolute;
+                top: 50px;
+                right: 0;
+                width: 220px;
+                background-color: white;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+                padding: 1.5rem 0;
+                text-align: center;
+                z-index: 90;
+                border-radius: 8px;
+            }
+
+            .menu-checkbox:checked ~ .menu-list {
+                display: flex;
+            }
+
+            /* Animation X */
+            .menu-checkbox:checked ~ .hamburger span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+            .menu-checkbox:checked ~ .hamburger span:nth-child(2) { opacity: 0; }
+            .menu-checkbox:checked ~ .hamburger span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+        }
+		
+		.map-section {
+			margin: 3rem 0;
+			text-align: center;
+		}
+
+		.map-section h2 {
+			color: var(--teal-dark);
+			margin-bottom: 1.5rem;
+		}
+
+		.map-container {
+			width: 100%;
+			max-width: 900px; /* On limite la largeur pour que ce soit élégant */
+			margin: 0 auto;
+			background: white;
+			padding: 10px;
+			border-radius: 12px;
+			box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+		}
+
+		.map-container iframe {
+			display: block;
+			border-radius: 8px;
+		}
+		
+		.links-grid {
+			display: flex;          /* Active le mode Flexbox */
+			flex-wrap: wrap;       /* Permet de passer à la ligne quand il n'y a plus de place */
+			justify-content: center; /* CENTRE chaque ligne individuellement */
+			gap: 20px;             /* L'espace entre tes cartes */
+			max-width: 1200px;     /* Largeur max de ta zone de cartes */
+			margin: 0 auto;        /* Centre tout le bloc sur la page */
+			padding: 20px;
+			margin-bottom: 4rem;
+		}
+
+		.link-card {
+			background-color: var(--green-main);
+			color: var(--text-on-dark);
+			height: 400px; /* On l'agrandit un peu pour faire tenir le texte */
+			display: flex;
+			flex-direction: column; /* Image en haut, texte en bas */
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			padding: 0px;
+			border-radius: 8px;
+			box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+			transition: transform 0.2s;
+			text-decoration: none;
+		}
+		
+		.link-card:hover {			
+			transform: translateY(-10px) scale(1.02); /* Soulève la carte de 10px et grossit de 2% */
+			box-shadow: 0 15px 30px rgba(0,0,0,0.2);   /* Ombre plus profonde pour l'effet de hauteur */
+			border-color: var(--green-main);
+			background-color: #e6b800; /* Devient un peu plus foncé */
+        }
+		
+		.link-card:active {
+			transform: translateY(-2px) scale(0.98);  /* S'enfonce légèrement quand on clique */
+		}
+
+		/* Style de l'image */
+		.card-icon {
+			height: 400px;
+			object-fit: contain; /* Évite de déformer l'image */
+		}
+
+		/* Conteneur du texte */
+		.card-content {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
+
+		.card-title {
+			font-size: 1.4rem;
+			font-weight: bold;
+			display: block;
+		}
+
+		.card-subtitle {
+			font-size: 0.9rem;
+			font-weight: normal;
+			opacity: 0.9; /* Un peu plus léger que le titre */
+			line-height: 1.3;
+		}
+		
+		.btn-parcours {
+			display: inline-block;
+			padding: 6px 12px;
+			background-color: #ED655F; /* Une couleur qui flashe (ex: Jaune) */
+			color: #333;               /* Texte foncé pour le contraste */
+			text-decoration: none;     /* Enlève le soulignement */
+			border-radius: 50px;       /* Forme arrondie "pilule" */
+			font-weight: bold;
+			text-transform: uppercase;
+			font-size: 1rem;
+			transition: all 0.3s ease; /* Animation fluide */
+			border: none;
+			cursor: pointer;
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+
+		.btn-resultats {
+			display: inline-block;
+			padding: 6px 12px;
+			background-color: #39DB3C; /* Une couleur qui flashe (ex: Jaune) */
+			color: #333;               /* Texte foncé pour le contraste */
+			text-decoration: none;     /* Enlève le soulignement */
+			border-radius: 50px;       /* Forme arrondie "pilule" */
+			font-weight: bold;
+			text-transform: uppercase;
+			font-size: 1rem;
+			transition: all 0.3s ease; /* Animation fluide */
+			border: none;
+			cursor: pointer;
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}	
+		
+		.btn-principalsmall {
+			display: inline-block;
+			padding: 6px 12px;
+			background-color: #ffcc00; /* Une couleur qui flashe (ex: Jaune) */
+			color: #333;               /* Texte foncé pour le contraste */
+			text-decoration: none;     /* Enlève le soulignement */
+			border-radius: 50px;       /* Forme arrondie "pilule" */
+			font-weight: bold;
+			text-transform: uppercase;
+			font-size: 1rem;
+			transition: all 0.3s ease; /* Animation fluide */
+			border: none;
+			cursor: pointer;
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+		
+		/* Style du bouton principal */
+		.btn-principal {
+			display: inline-block;
+			padding: 12px 24px;
+			background-color: #ffcc00; /* Une couleur qui flashe (ex: Jaune) */
+			color: #333;               /* Texte foncé pour le contraste */
+			text-decoration: none;     /* Enlève le soulignement */
+			border-radius: 50px;       /* Forme arrondie "pilule" */
+			font-weight: bold;
+			text-transform: uppercase;
+			font-size: 2rem;
+			transition: all 0.3s ease; /* Animation fluide */
+			border: none;
+			cursor: pointer;
+			margin-top: 10px;
+			margin-bottom: 40px;
+		}
+
+		/* Effet au survol (souris) */
+		.btn-principal:hover {
+			background-color: #e6b800; /* Devient un peu plus foncé */
+			transform: scale(1.05);    /* Grossit très légèrement */
+			box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+		}
+
+		/* Effet au clic */
+		.btn-principal:active {
+			transform: scale(0.98);
+		}
+		
+		/* Style du bouton principal2 */
+		.btn-principal2 {
+			display: inline-block;
+			padding: 12px 24px;
+			background-color: #2DA1E0; /* Une couleur qui flashe (ex: Jaune) */
+			color: #333;               /* Texte foncé pour le contraste */
+			text-decoration: none;     /* Enlève le soulignement */
+			border-radius: 50px;       /* Forme arrondie "pilule" */
+			font-weight: bold;
+			text-transform: uppercase;
+			font-size: 2rem;
+			transition: all 0.3s ease; /* Animation fluide */
+			border: none;
+			cursor: pointer;
+			margin-right: 30px;
+			margin-left: 30px;
+			margin-bottom: 40px;
+		}
+
+		/* Effet au survol (souris) */
+		.btn-principal2:hover {
+			background-color: #e6b800; /* Devient un peu plus foncé */
+			transform: scale(1.05);    /* Grossit très légèrement */
+			box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+		}
+
+		/* Effet au clic */
+		.btn-principal2:active {
+			transform: scale(0.98);
+		}
+		
+		.conteneur-centre {
+			text-align: center; /* Centre tout ce qui est à l'intérieur (texte, boutons, images) */
+			width: 100%;
+		}
+		
+		/* Le conteneur qui contient tous tes blocs info-item */
+		.info-grid {
+			display: flex;          /* Active le mode "côte à côte" */
+			flex-direction: row;    /* Les aligne en ligne (par défaut) */
+			justify-content: center; /* Les centre horizontalement sur la page */
+			gap: 20px;              /* Ajoute un espace entre chaque bloc */
+			flex-wrap: wrap;        /* ESSENTIEL : permet de revenir à la ligne sur téléphone */
+			max-width: 1200px;      /* Limite la largeur totale pour que ce soit joli */
+			margin: 0 auto;         /* Centre toute la grille sur la page */
+			padding: 20px;
+		}
+
+		/* Le style de chaque bloc individuel */
+		.info-item {
+			flex: 1;                /* Force les blocs à avoir la même largeur */
+			min-width: 280px;       /* Empêche les blocs de devenir trop étroits */
+			max-width: 350px;       /* Empêche les blocs de devenir trop larges */
+			background: white;
+			padding: 25px;
+			border-radius: 12px;
+			text-align: center;
+			box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+		}
+		
+		.countdown-container {	
+			text-align: center;
+			padding: 30px;
+			background: #fff;
+			background-color: rgba(0, 0, 0, 0);
+			border-radius: 15px;
+			box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+			margin: 0px auto;
+			max-width: 600px;
+		}
+
+		.hero-date {
+            color: white; /* Couleur de l'intérieur des lettres */
+			text-shadow: 
+				-1px -1px 0 #555,  
+				 1px -1px 0 #555,
+				-1px  1px 0 #555,
+				 1px  1px 0 #555,
+				 2px  2px 4px rgba(0,0,0,0.5); /* Petite ombre portée pour donner du relief */
+				 font-size: 1.7rem;
+		}
+
+		.countdown-title {
+			color: white; /* Couleur de l'intérieur des lettres */
+			text-shadow: 
+				-1px -1px 0 #555,  
+				 1px -1px 0 #555,
+				-1px  1px 0 #555,
+				 1px  1px 0 #555,
+				 2px  2px 4px rgba(0,0,0,0.5); /* Petite ombre portée pour donner du relief */
+				 font-size: 1.3rem;
+				 margin:15px
+		}
+
+		#countdown {
+			display: flex;
+			justify-content: center;
+			gap: 15px;text-shadow: 
+				-1px -1px 0 #555,  
+				 1px -1px 0 #555,
+				-1px  1px 0 #555,
+				 1px  1px 0 #555,
+				 2px  2px 4px rgba(0,0,0,0.5); /* Petite ombre portée pour donner du relief */
+		}
+
+		.time-block {
+			background: var(--green-main); /* On réutilise ton vert ! */
+			color: white;
+			padding-top:10px;
+			padding-bottom:10px;
+			border-radius: 10px;
+			min-width: 60px;
+		}
+
+		.time-block span {
+			display: block;
+			font-size: 1.5rem;
+			font-weight: bold;
+		}
+
+		.label {
+			font-size: 0.6rem;
+			text-transform: uppercase;
+		}
+		
+		.bg-fixe {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1; /* Place l'image derrière le texte */
+			background: url('images/commune.jpg') no-repeat center center;
+			background-size: cover;
+		}
+		
+		/* Container pour aligner les icônes horizontalement */
+		.social-icons-container {
+			display: flex;
+			justify-content: center; /* Centre les icônes dans la boîte */
+			gap: 20px;               /* Espace entre les deux icônes */
+			margin-top: 15px;
+		}
+
+		/* Style de base pour les liens d'icônes */
+		.social-icon-link {
+			text-decoration: none;
+			font-size: 2.5rem;       /* Taille des icônes (assez grande pour mobile) */
+			transition: transform 0.3s ease, color 0.3s ease;
+			color: #555;             /* Couleur grise par défaut */
+		}
+
+		/* Effet au survol (agrandissement) */
+		.social-icon-link:hover {
+			transform: scale(1.1);   /* Grossit légèrement */
+		}
+
+		/* Couleurs officielles au survol */
+		.social-icon-link.facebook:hover {
+			color: #1877F2;          /* Bleu Facebook */
+		}
+
+		.social-icon-link.instagram:hover {
+			color: #E4405F;          /* Rose/Rouge Instagram */
+		}
+
+		/* Ajustement pour mobile : icônes un peu plus grandes pour le tactile */
+		@media (max-width: 600px) {
+			.social-icon-link {
+				font-size: 3rem;
+			}
+		}
+		
+		/* 1. Conteneur principal (pour centrer l'image dans la page) */
+        .photo-responsive-container {
+            width: 100%;
+            display: flex;
+            justify-content: center; /* Centre l'image horizontalement */
+            margin-bottom: 40px      /* Espace en dessous */
+        }
+
+        /* 2. Style de base de l'image */
+        .img-adaptative {
+            height: auto;           /* Garde les proportions (pas de déformation) */
+            display: block;
+            border-radius: 8px;     /* Optionnel : coins arrondis */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Optionnel : ombre */
+        }
+
+        .img-adaptative {
+            width: 80%;             /* Prend 80% de la largeur sur téléphone */
+        }
+
+        @media (min-width: 1024px) {
+            .img-adaptative {
+                width: 50%;         /* Ne prend plus que 50% sur PC */
+                max-width: 1000px;  /* Sécurité : ne dépasse jamais 1000px de large */
+            }
+        }
+		
+		h1 {
+            color: white; /* Couleur de l'intérieur des lettres */
+			text-shadow: 
+				-1px -1px 0 #555,  
+				 1px -1px 0 #555,
+				-1px  1px 0 #555,
+				 1px  1px 0 #555,
+				 2px  2px 4px rgba(0,0,0,0.5); /* Petite ombre portée pour donner du relief */
+
+			/* --- Tes autres réglages --- */
+			font-size: 2.0rem;
+			text-align: center;
+			display: inline-block; /* Pour que la barre ne fasse pas toute la largeur */
+		}
+		
+		/* --- Style Commun (Jumeau de la Balade) --- */
+			.marche-fleurs-card {
+				max-width: 700px;
+				margin: 40px auto;
+				background: #ffffff;
+				border-radius: 25px;
+				overflow: hidden;
+				box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+				font-family: 'Segoe UI', Roboto, sans-serif;
+				border: 1px solid #e0e0e0;
+			}
+
+			.marche-header {
+				/* Même dégradé vert "nature" */
+				background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+				color: white;
+				padding: 30px 20px 40px 20px;
+				text-align: center;
+			}
+
+			.header-top {
+				display: flex;
+				justify-content: center;
+				gap: 15px;
+				margin-bottom: 20px;
+				flex-wrap: wrap;
+			}
+
+			.badge-date, .badge-heure {
+				background: rgba(255,255,255,0.25);
+				padding: 8px 18px;
+				border-radius: 25px;
+				font-size: 1rem;
+				font-weight: 600;
+				letter-spacing: 0.5px;
+				backdrop-filter: blur(5px);
+			}
+
+			.marche-header h2 {
+				margin: 10px 0 5px 0;
+				font-size: 2.5rem; /* Légèrement plus petit pour tenir sur 2 lignes */
+				text-shadow: 1px 2px 0px rgba(0,0,0,0.2);
+				line-height: 1.1;
+			}
+
+			.subtitle {
+				font-style: italic;
+				opacity: 0.95;
+				font-size: 1.1rem;
+			}
+
+			.marche-content {
+				padding: 35px;
+				color: #444;
+				line-height: 1.7;
+			}
+
+			.intro-text {
+				text-align: center;
+				margin-bottom: 30px;
+				font-size: 1.05rem;
+			}
+
+			/* --- Style Spécifique au Marché (Les Pôles) --- */
+			.poles-container {
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+			}
+
+			.pole-item {
+				display: flex;
+				align-items: center;
+				background: #fdfdfd;
+				padding: 15px 20px;
+				border-radius: 15px;
+				border: 1px solid #eaeaea;
+				transition: transform 0.2s ease, box-shadow 0.2s ease;
+			}
+
+			.pole-item:hover {
+				transform: translateY(-3px);
+				box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+				border-color: #d4ede0;
+			}
+
+			.pole-icon {
+				font-size: 2.5rem;
+				margin-right: 20px;
+				width: 60px;
+				text-align: center;
+				flex-shrink: 0;
+			}
+
+			.pole-text h3 {
+				margin: 0 0 5px 0;
+				color: #27ae60;
+				font-size: 1.25rem;
+			}
+
+			.pole-text p {
+				margin: 0;
+				font-size: 0.95rem;
+				color: #666;
+			}
+
+			@media (max-width: 600px) {
+				.marche-header h2 { font-size: 1.8rem; }
+				.header-top { flex-direction: column; gap: 10px; }
+				.pole-item { flex-direction: column; text-align: center; padding: 20px; }
+				.pole-icon { margin: 0 0 15px 0; font-size: 3rem; width: auto; }
+			}
+    </style>
+</head>
+<body>
+
+    <div class="site-container">
+        <header>
+            <nav class="main-nav">
+                <div class="brand-name">
+					<a href="index.html" style="text-decoration: none; color: inherit;">Les Gens de Fourg</a>
+				</div>
+
+                <div class="nav-right">
+                    <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+                    
+                    <label for="menu-toggle" class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                    <ul class="menu-list">
+                        <li><a href="index.html">Accueil</a></li>
+						<li><a href="balade-gourmande-2026.html">Balade gourmande</a></li>
+						<li><a href="marche-aux-fleurs-2026.html">Marché aux fleurs</a></li>
+						<li><a href="caisse-a-savon-2026.html">Caisses à savon</a></li>
+						<li><a href="corrida-2026.html">Corrida</a></li>
+						<li><a href="loto-2026.html">Loto</a></li>
+						<li><a href="marche-de-noel-2026.html">Marché de Noel</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+		
+        <main>
+            <section class="hero-banner-page">
+                <h1>15eme Corrida de Fourg</h1>
+				<div class="countdown-container">
+				<p class="hero-date">Rendez-vous le 06 Septembre 2026</p>
+				<h2 class="countdown-title">Départ des courses dans :</h2>
+				<div id="countdown">
+					<div class="time-block">
+						<span id="days">00</span>
+						<div class="label">Jours</div>
+					</div>
+					<div class="time-block">
+						<span id="hours">00</span>
+						<div class="label">Heures</div>
+					</div>
+					<div class="time-block">
+						<span id="minutes">00</span>
+						<div class="label">Min</div>
+					</div>
+					<div class="time-block">
+						<span id="seconds">00</span>
+						<div class="label">Sec</div>
+					</div>
+				</div>
+			</div>
+            </section>
+			
+			<section class="contenu-section">
+				<div class="conteneur-centre">
+					<a href="https://courses.even-outdoor.com/index.php?m=courses&a=courses&resultats=&id_evenement=775" class="btn-principal" target="_blank" rel="noopener">Inscriptions</a>
+				</div>
+			</section>
+			
+            <section class="marche-fleurs-card">
+				<div class="marche-header">
+					<div class="header-top">
+						<span class="badge-date">📅 6 Septembre 2026</span>
+						<span class="badge-heure">🕒 9h00</span>
+					</div>
+					<h2>Le trail de la Corrida de Fourg fête sa 15eme édition !</h2>
+					<p class="subtitle">L'associassion des Gens de Fourg vous donne rendez-vous au coeur de la magifique forêt de Chaux pour une journée placée sous le signe du sport, de la convivialité et de la bonne humeur.</p>
+				</div>
+				
+				<div class="marche-content">
+					<p class="intro-text">Que vous soyez coureur chevronné, marcheur du dimanche ou en famille, il y a forcément une épreuve pour vous.<br><br>
+					<strong>2 parcours 100% trail de 10 et 20 kms</strong><br><br>
+					<strong>Une randonnée de 10kms</strong><br><br>
+					<strong>Des courses enfants</strong><br> Pour que les plus jeunes goutent aussi à la joie du dossard !<br><br>
+					<strong style="color: #F0324E;">Un tee-shirt collector "15eme édition" offert au 200 premiers inscrits !</strong><br><br>
+					<strong>Concert en plein air</strong><br>animation musicale avec un groupe tout au long de la journée.<br><br>					
+					<strong>Garderie d'enfants gratuite</strong></br>Courez l'esprit libre ! Une nounou agréée accueille vos futur champions sur place pendant vos épreuves.<br>Reservation au 06 73 58 59 74.<br><br>
+					<strong>Buvette & Restauration</strong>
+				</div>
+			</section>
+			
+			<section class="marche-fleurs-card">
+				<video controls style="height: 95vh; width: auto; max-width: 100%; display: block; margin: 0 auto;">
+				  <source src="medias/corrida2026.mp4" type="video/mp4" />
+
+				  Télécharger la vidéo
+				  <a href="medias/corrida2026.mp4">MP4</a>
+				  .
+				</video>
+			</section>
+			
+			<section class="info-section">
+			<div class="container">
+				<div class="info-grid">
+					<div class="info-item">
+						<h3>Trail 20kms</h3>
+						<br>
+						<p>D+/D- : 600m</p>
+						<p>Départ : 9h00</p>
+						<br>
+						<a href="https://tracedetrail.fr/fr/trace/354261" class="btn-parcours" target="_blank" rel="noopener">Parcours</a><br>
+						<a href="https://courses.even-outdoor.com/index.php?m=courses&a=courses&resultats=&id_evenement=775" class="btn-principalsmall" target="_blank" rel="noopener">Inscription</a><br>
+						<a href="corrida/20kms.pdf" class="btn-resultats" target="_blank" rel="noopener">Resultats</a>
+					</div>
+					<div class="info-item">
+						<h3>Trail 10kms</h3>
+						<br>
+						<p>D+/D- : 150m</p>
+						<p>Départ : 9h30</p>
+						<br>
+						<a href="https://tracedetrail.fr/fr/trace/354262" class="btn-parcours" target="_blank" rel="noopener">Parcours</a><br>
+						<a href="https://courses.even-outdoor.com/index.php?m=courses&a=courses&resultats=&id_evenement=775" class="btn-principalsmall" target="_blank" rel="noopener">Inscription</a><br>
+						<a href="corrida/10kms.pdf" class="btn-resultats" target="_blank" rel="noopener">Resultats</a>
+					</div>
+					<div class="info-item">
+						<h3>Randonnée 10kms</h3>
+						<br>
+						<p>D+/D- : 150m</p>
+						<p>Départ : 8h45</p>
+						<br>
+						<a href="https://tracedetrail.fr/fr/trace/354262" class="btn-parcours" target="_blank" rel="noopener">Parcours</a><br>
+						<a href="https://courses.even-outdoor.com/index.php?m=courses&a=courses&resultats=&id_evenement=775" class="btn-principalsmall" target="_blank" rel="noopener">Inscription</a>
+					</div>
+				</div>
+			</div>
+			</section>
+			
+			<section class="info-section">
+			<div class="container">
+				<div class="info-grid">
+					<div class="info-item">
+						<h3>Courses enfants</h3>
+						<br>
+						<p>Minimes - 2012-2013 : 4kms</p>
+						<p>Benjamins - 2014-2015 : 3kms</p>
+						<p>Poussins - 2016-2017 : 1.5kms</p>
+						<p>Éveil Athlétique 2018-2020</p>
+						<p>Baby Athlé - 2021-2026</p>
+						<br>
+						<p>Départ : 14h00</p>
+						<br>
+						<a href="https://courses.even-outdoor.com/index.php?m=courses&a=courses&resultats=&id_evenement=775" class="btn-principalsmall" target="_blank" rel="noopener">Inscription</a>
+					</div>
+				</div>
+			</div>
+			</section>
+			
+			<section class="google-maps-preview" style="text-align: center; margin: 40px auto; max-width: 950px; padding: 0 20px">
+				<h2>Lieu de départ et d'arrivée des épreuves</h2>
+				<div class="google-card" style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 1px solid #dadce0;">
+		
+					<a href="https://maps.app.goo.gl/cjmsGk9p5xzXrihA9" target="_blank" style="text-decoration: none; display: block; overflow: hidden;">
+						<img src="cartes/fete.png" alt="Emplacement sur Google Maps" 
+							 style="width: 100%; display: block; transition: filter 0.3s ease;" 
+							 onmouseover="this.style.filter='brightness(90%)'" 
+							 onmouseout="this.style.filter='brightness(100%)'">
+						
+						<div style="background: white; display: flex; align-items: center; justify-content: center; border-top: 1px solid #f1f3f4;">
+							<img src="https://www.gstatic.com/images/branding/product/2x/maps_96in128dp.png" alt="Google Maps" style="width: 20px; margin-right: 10px;">
+							<span>Ouvrir dans Google Maps.</span>
+						</div>
+					</a>
+				</div>
+			</section>
+			
+			<section class="info-section">
+			<div class="container">
+				<div class="info-grid">
+					<div class="info-item">
+						<div class="info-icon">📍</div>
+						<h3>Adresse :</h3>
+						<p>Place de la mairie</p>
+						<p>25440 Fourg</p>
+					</div>
+					<div class="info-item">
+						<div class="info-icon">📞</div>
+						<h3>Contact</h3>
+						<p>Email : assocgensdefourg@gmail.com<br>Tél : 06.73.58.59.74</p>
+					</div>
+				</div>
+			</div>
+			</section>		
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Les gens de Fourg - Association</p>
+		<a style="color: #999; text-decoration: none; font-size: 0.8rem;">¹ L'abus d'alcool est dangereux pour la santé. A consomer avec modération</a><br>
+		<a href="mentions-legales.html" style="color: #999; text-decoration: none; font-size: 0.8rem;">Mentions légales</a>
+    </footer>
+
+
+<script>
+    // FIXE LA DATE ICI (Année, Mois-1, Jour, Heure, Minute)
+    // Attention : Janvier = 0, Septembre = 8
+    const eventDate = new Date(2026, 8, 6, 9, 0, 0).getTime();
+
+    const updateCountdown = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+
+        // Calculs mathématiques pour les jours, heures, minutes, secondes
+        const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Affichage des résultats
+        document.getElementById("days").innerText = d;
+        document.getElementById("hours").innerText = h;
+        document.getElementById("minutes").innerText = m;
+        document.getElementById("seconds").innerText = s;
+
+        // Si le compte à rebours est fini
+        if (distance < 0) {
+            clearInterval(updateCountdown);
+            document.getElementById("countdown").innerHTML = "<h3>C'est parti !</h3>";
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
