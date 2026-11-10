@@ -51,12 +51,18 @@
     {
       "@type": "ListItem",
       "position": 5,
-      "url": "https://les-gens-de-fourg.github.io/loto-2026.html",
-      "name": "Loto"
+      "url": "https://les-gens-de-fourg.github.io/soiree-contes-2026.html",
+      "name": "Soirée contes"
     },
     {
       "@type": "ListItem",
       "position": 6,
+      "url": "https://les-gens-de-fourg.github.io/telethon-2026.html",
+      "name": "Téléthon"
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
       "url": "https://les-gens-de-fourg.github.io/marche-de-noel-2026.html",
       "name": "Marché de Noel"
     }
@@ -137,7 +143,16 @@
         .menu-list {
             display: flex;
             list-style: none;
-            gap: 1.2rem;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: nowrap; /* Empêche strictement le retour à la ligne */
+            flex-grow: 1;
+            margin: 0 1rem;
+            white-space: nowrap; /* Empêche les textes des liens de se couper sur plusieurs lignes */
+        }
+
+        .menu-list li {
+            display: inline-block;
         }
 
         .menu-list a {
@@ -555,12 +570,13 @@
                         <span></span>
                     </label>
                     <ul class="menu-list">
-                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="index.html" style="text-align: center;">Accueil</a></li>
 						<li><a href="balade-gourmande-2026.html" title="Balade gourmande 2026">Balade gourmande</a></li>
 						<li><a href="marche-aux-fleurs-2026.html" title="Marché aux fleurs 2026">Marché aux fleurs</a></li>
 						<li><a href="caisse-a-savon-2026.html" title="Caisses à savon 2026">Caisses à savon</a></li>
 						<li><a href="corrida-2026.html" title="Corrida de Fourg 2026">Corrida</a></li>
-						<li><a href="loto-2026.html" title="Loto 2026">Loto</a></li>
+						<li><a href="soiree-contes-2026.html" title="Soiree contes 2026">Soiree contes</a></li>
+						<li><a href="telethon/telethon-2026.pdf" target="blank" title="Téléthon 2026">Téléthon</a></li>
 						<li><a href="marche-de-noel-2026.html" title="Marche de Noel 2026">Marché de Noel</a></li>
                     </ul>
                 </div>
@@ -569,13 +585,27 @@
 
         <main>
             <section class="hero-banner">
-                <a>Nos evenements</a>
+                <a>Nos evenements à venir</a>
             </section>
 
-			<section class="contenu-section">
-
             <section class="links-grid">
-				<a href="balade-gourmande-2026.html" class="link-card">
+				<a href="soiree-contes-2026.html" class="link-card">
+					<img src="affiches/soiree-contes-2026.png" alt="" class="card-icon">
+				</a>
+				<a href="telethon/telethon-2026.pdf" target="_blank" class="link-card">
+					<img src="affiches/telethon-2026.png" alt="" class="card-icon">
+				</a>
+				<a href="marche-de-noel-2026.html" class="link-card">
+					<img src="affiches/marche-de-noel-2026.jpg" alt="" class="card-icon">
+				</a>
+            </section>
+			
+			<section class="hero-banner">
+                <a>Nos evenements passés</a>
+            </section>
+			
+			<section class="links-grid">
+			<a href="balade-gourmande-2026.html" class="link-card">
 					<img src="affiches/balade-gourmande-2026.png" alt="" class="card-icon">
 				</a>
                 <a href="marche-aux-fleurs-2026.html" class="link-card">
@@ -587,13 +617,7 @@
                 <a href="corrida-2026.html" class="link-card">
 					<img src="affiches/corrida.png" alt="" class="card-icon">
 				</a>
-				<a href="loto-2026.html" class="link-card">
-					<img src="affiches/loto.jfif" alt="" class="card-icon">
-				</a>
-				<a href="marche-de-noel-2026.html" class="link-card">
-					<img src="affiches/marche-de-noel.jfif" alt="" class="card-icon">
-				</a>
-            </section>
+			</section>
 			
 			<section class="info-section">
 			<div class="container">				

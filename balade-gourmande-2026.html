@@ -87,7 +87,16 @@
         .menu-list {
             display: flex;
             list-style: none;
-            gap: 1.2rem;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: nowrap; /* Empêche strictement le retour à la ligne */
+            flex-grow: 1;
+            margin: 0 1rem;
+            white-space: nowrap; /* Empêche les textes des liens de se couper sur plusieurs lignes */
+        }
+
+        .menu-list li {
+            display: inline-block;
         }
 
         .menu-list a {
@@ -671,7 +680,7 @@
     <div class="site-container">
         <header>
             <nav class="main-nav">
-                <div class="brand-name">
+				<div class="brand-name">
 					<a href="index.html" style="text-decoration: none; color: inherit;">Les Gens de Fourg</a>
 				</div>
 
@@ -684,13 +693,14 @@
                         <span></span>
                     </label>
                     <ul class="menu-list">
-                        <li><a href="index.html">Accueil</a></li>
-						<li><a href="balade-gourmande-2026.html">Balade gourmande</a></li>
-						<li><a href="marche-aux-fleurs-2026.html">Marché aux fleurs</a></li>
-						<li><a href="caisse-a-savon-2026.html">Caisses à savon</a></li>
-						<li><a href="corrida-2026.html">Corrida</a></li>
-						<li><a href="loto-2026.html">Loto</a></li>
-						<li><a href="marche-de-noel-2026.html">Marché de Noel</a></li>
+                        <li><a href="index.html" style="text-align: center;">Accueil</a></li>
+						<li><a href="balade-gourmande-2026.html" title="Balade gourmande 2026">Balade gourmande</a></li>
+						<li><a href="marche-aux-fleurs-2026.html" title="Marché aux fleurs 2026">Marché aux fleurs</a></li>
+						<li><a href="caisse-a-savon-2026.html" title="Caisses à savon 2026">Caisses à savon</a></li>
+						<li><a href="corrida-2026.html" title="Corrida de Fourg 2026">Corrida</a></li>
+						<li><a href="soiree-contes-2026.html" title="Soiree contes 2026">Soiree contes</a></li>
+						<li><a href="telethon/telethon-2026.pdf" target="blank" title="Téléthon 2026">Téléthon</a></li>
+						<li><a href="marche-de-noel-2026.html" title="Marche de Noel 2026">Marché de Noel</a></li>
                     </ul>
                 </div>
             </nav>
